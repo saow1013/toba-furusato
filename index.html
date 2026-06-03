@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>鳥羽ふるさと不動産 ／ 行政書士奥村晃事務所</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --main: #7B5C3E;
+      --accent: #C4976A;
+      --dark: #5E4430;
+      --bg: #FAF7F2;
+      --text: #2C2C2C;
+      --border: #E0D5C5;
+      --card-bg: #FFFFFF;
+      --max-w: 900px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 17px;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.8;
+    }
+
+    /* ヘッダー */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: var(--dark);
+      color: #fff;
+      padding: 0 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .header-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+      gap: 16px;
+    }
+
+    .header-logo {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
+    }
+
+    .header-logo span {
+      font-size: 13px;
+      font-family: 'Noto Serif JP', serif;
+      white-space: nowrap;
+      line-height: 1.4;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-shrink: 0;
+    }
+
+    .header-tel a {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+
+    .header-tel a:hover { background: var(--main); }
+
+    /* ハンバーガーメニュー */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+    }
+
+    .hamburger span {
+      display: block;
+      height: 2px;
+      background: #fff;
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ナビ */
+    nav {
+      display: flex;
+      align-items: center;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 4px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 13px;
+      padding: 6px 10px;
+      border-radius: 4px;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+
+    nav ul li a:hover { background: rgba(255,255,255,0.15); }
+
+    /* スマホナビ */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 70px;
+      left: 0;
+      right: 0;
+      z-index: 99;
+      background: var(--dark);
+      padding: 12px 0;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .mobile-nav.open { display: block; }
+
+    .mobile-nav ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mobile-nav ul li a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      transition: background 0.2s;
+    }
+
+    .mobile-nav ul li a:hover { background: rgba(255,255,255,0.1); }
+
+    /* メインコンテンツ */
+    main { padding-top: 70px; }
+
+    /* セクション共通 */
+    section {
+      padding: 72px 20px;
+    }
+
+    .section-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--main);
+      margin-bottom: 40px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--border);
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 60px;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    /* Section 1：ファーストビュー */
+    .hero {
+      position: relative;
+      height: 90vh;
+      min-height: 500px;
+      background-image: url('toba_001.jpeg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(30, 20, 10, 0.55);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-content h1 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(26px, 5vw, 44px);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.5;
+      letter-spacing: 0.08em;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    }
+
+    .hero-content p {
+      margin-top: 20px;
+      color: rgba(255,255,255,0.9);
+      font-size: clamp(14px, 2.5vw, 18px);
+      letter-spacing: 0.06em;
+      text-shadow: 0 1px 6px rgba(0,0,0,0.4);
+    }
+
+    /* Section 2：お困りごと */
+    .concerns { background: var(--bg); }
+
+    .concerns-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .concern-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      transition: box-shadow 0.2s;
+    }
+
+    .concern-card:hover { box-shadow: 0 4px 16px rgba(123,92,62,0.12); }
+
+    .concern-icon {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      margin-top: 2px;
+      color: var(--accent);
+    }
+
+    .concern-icon svg {
+      width: 36px;
+      height: 36px;
+      stroke: var(--accent);
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .concern-card p { font-size: 15px; line-height: 1.7; }
+
+    /* Section 3：サービス内容 */
+    .services { background: #fff; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .service-box {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .service-box-header {
+      background: var(--main);
+      color: #fff;
+      padding: 14px 20px;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .service-box-body { padding: 24px; }
+
+    .service-category {
+      margin-bottom: 20px;
+    }
+
+    .service-category:last-child { margin-bottom: 0; }
+
+    .service-category h4 {
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--accent);
+      margin-bottom: 8px;
+      padding-left: 10px;
+      border-left: 3px solid var(--accent);
+    }
+
+    .service-category ul {
+      list-style: none;
+      padding-left: 12px;
+    }
+
+    .service-category ul li {
+      font-size: 15px;
+      padding: 4px 0;
+      padding-left: 14px;
+      position: relative;
+    }
+
+    .service-category ul li::before {
+      content: '・';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    /* Section 4：代表挨拶 */
+    .greeting { background: var(--bg); }
+
+    .greeting-inner {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .greeting-photo img {
+      width: 100%;
+      border-radius: 8px;
+      border: 3px solid var(--border);
+      display: block;
+    }
+
+    .greeting-text p {
+      margin-bottom: 14px;
+      line-height: 1.9;
+    }
+
+    .greeting-text .sign {
+      margin-top: 24px;
+      font-weight: 700;
+      color: var(--main);
+    }
+
+    /* 写真ギャラリー */
+    .photo-gallery {
+      background: var(--bg);
+      padding: 0 20px 64px;
+    }
+
+    .photo-gallery-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .photo-gallery-inner img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      display: block;
+    }
+
+    /* Section 5：よくあるご質問リンク */
+    .qa-link { background: var(--main); }
+
+    .qa-link h2 { color: #fff; border-bottom-color: rgba(255,255,255,0.3); }
+    .qa-link h2::after { background: var(--accent); }
+
+    .qa-link-lead {
+      color: rgba(255,255,255,0.9);
+      font-size: 17px;
+      margin-bottom: 28px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 14px 36px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 17px;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .btn-primary:hover { background: #b3864f; transform: translateY(-1px); }
+
+    /* Section 6：会社概要 */
+    .company { background: #fff; }
+
+    .company-tables { display: flex; flex-direction: column; gap: 40px; margin-bottom: 40px; }
+
+    .company-table-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--main);
+      margin-bottom: 16px;
+    }
+
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 16px;
+    }
+
+    .info-table th, .info-table td {
+      padding: 12px 16px;
+      text-align: left;
+      border: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .info-table th {
+      background: var(--bg);
+      font-weight: 700;
+      width: 35%;
+      color: var(--main);
+      white-space: nowrap;
+    }
+
+    .info-table td a { color: var(--main); }
+
+    .map-wrapper {
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .map-wrapper iframe {
+      display: block;
+      width: 100%;
+      height: 380px;
+    }
+
+    /* Section 7：お問い合わせ */
+    .contact { background: var(--bg); }
+
+    .contact-lead {
+      font-size: 17px;
+      margin-bottom: 32px;
+      color: var(--text);
+    }
+
+    .contact-tel {
+      margin-bottom: 24px;
+    }
+
+    .contact-tel a {
+      display: inline-block;
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--main);
+      text-decoration: none;
+      font-family: 'Noto Serif JP', serif;
+      transition: color 0.2s;
+    }
+
+    .contact-tel a:hover { color: var(--accent); }
+
+    .contact-tel .tel-note {
+      display: block;
+      font-size: 15px;
+      color: #666;
+      margin-top: 4px;
+    }
+
+    .contact-email {
+      margin-bottom: 32px;
+      font-size: 17px;
+    }
+
+    .contact-email a { color: var(--main); }
+
+    /* アコーディオン（個人情報保護方針） */
+    .accordion-wrap { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+
+    .accordion-btn {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 16px 20px;
+      background: #fff;
+      border: none;
+      font-size: 16px;
+      font-family: 'Noto Sans JP', sans-serif;
+      color: var(--main);
+      font-weight: 700;
+      cursor: pointer;
+      text-align: left;
+      transition: background 0.2s;
+    }
+
+    .accordion-btn:hover { background: var(--bg); }
+
+    .accordion-icon {
+      transition: transform 0.3s;
+      font-style: normal;
+      flex-shrink: 0;
+    }
+
+    .accordion-btn.open .accordion-icon { transform: rotate(180deg); }
+
+    .accordion-body {
+      display: none;
+      padding: 20px 24px;
+      background: var(--bg);
+      font-size: 15px;
+      line-height: 1.9;
+      border-top: 1px solid var(--border);
+    }
+
+    .accordion-body.open { display: block; }
+
+    .accordion-body h3 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--main);
+    }
+
+    .accordion-body .policy-item {
+      margin-bottom: 12px;
+      padding-left: 16px;
+      text-indent: -16px;
+    }
+
+    .accordion-body .policy-section {
+      font-weight: 700;
+      color: var(--text);
+      margin: 16px 0 4px;
+    }
+
+    /* フッター */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.85);
+      text-align: center;
+      padding: 28px 20px;
+      font-size: 14px;
+    }
+
+    footer p { line-height: 1.8; }
+
+    /* ========== レスポンシブ ========== */
+    @media (max-width: 768px) {
+      nav { display: none; }
+      .hamburger { display: flex; }
+
+      .header-inner { height: 60px; }
+      main { padding-top: 60px; }
+      .mobile-nav { top: 60px; }
+
+      .header-logo span { font-size: 11px; }
+      .header-tel a { font-size: 13px; padding: 6px 10px; }
+
+      .hero { height: 70vh; }
+
+      section { padding: 52px 16px; }
+      h2 { font-size: 22px; margin-bottom: 28px; }
+
+      .concerns-grid { grid-template-columns: 1fr; }
+
+      .services-grid { grid-template-columns: 1fr; }
+
+      .greeting-inner { grid-template-columns: 1fr; }
+      .greeting-photo { max-width: 240px; margin: 0 auto; }
+      .photo-gallery-inner { grid-template-columns: 1fr; }
+
+      .contact-tel a { font-size: 28px; }
+
+      .info-table th { width: 40%; white-space: normal; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-content h1 { font-size: 22px; }
+      .hero-content p { font-size: 13px; }
+
+      .contact-tel a { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header>
+  <div class="header-inner">
+    <div class="header-logo">
+      <span>行政書士奥村晃事務所</span>
+      <span>鳥羽ふるさと不動産</span>
+    </div>
+    <nav aria-label="グローバルナビゲーション">
+      <ul>
+        <li><a href="#home">ホーム</a></li>
+        <li><a href="#services">サービス内容</a></li>
+        <li><a href="#greeting">代表挨拶</a></li>
+        <li><a href="#company">会社概要</a></li>
+        <li><a href="#contact">お問い合わせ</a></li>
+        <li><a href="qa.html">よくあるご質問</a></li>
+      </ul>
+    </nav>
+    <div class="header-right">
+      <div class="header-tel">
+        <a href="tel:0599250055"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:5px;margin-bottom:1px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.58 3.44 2 2 0 0 1 3.55 1h3a2 2 0 0 1 2 1.72c.13.97.37 1.93.72 2.85a2 2 0 0 1-.45 2.11L7.91 8.69a16 16 0 0 0 5.8 5.8l1.01-.92a2 2 0 0 1 2.11-.45c.92.35 1.88.59 2.85.72A2 2 0 0 1 22 16.92z"/></svg>0599-25-0055</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- スマホ用ナビ -->
+<nav class="mobile-nav" id="mobileNav" aria-label="モバイルナビゲーション">
+  <ul>
+    <li><a href="#home" class="mobile-link">ホーム</a></li>
+    <li><a href="#services" class="mobile-link">サービス内容</a></li>
+    <li><a href="#greeting" class="mobile-link">代表挨拶</a></li>
+    <li><a href="#company" class="mobile-link">会社概要</a></li>
+    <li><a href="#contact" class="mobile-link">お問い合わせ</a></li>
+    <li><a href="qa.html" class="mobile-link">よくあるご質問</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <!-- Section 1：ファーストビュー -->
+  <section class="hero" id="home" aria-label="ファーストビュー">
+    <div class="hero-content">
+      <h1>鳥羽の土地と暮らしを、<br>次の世代へ。</h1>
+      <p>行政書士奥村晃事務所 ／ 鳥羽ふるさと不動産</p>
+    </div>
+  </section>
+
+  <!-- Section 2：こんなお困りごとはありませんか？ -->
+  <section class="concerns" id="concerns">
+    <div class="section-inner">
+      <h2>こんなお困りごとはありませんか？</h2>
+      <div class="concerns-grid">
+        <div class="concern-card">
+          <span class="concern-icon">
+            <svg viewBox="0 0 36 36" aria-hidden="true"><polygon points="18,5 32,18 28,18 28,31 8,31 8,18 4,18"/><rect x="14" y="22" width="8" height="9"/><polyline points="25,10 25,5 28,5 28,14"/></svg>
+          </span>
+          <p>自分が元気なうちに、財産のことを整理しておきたい</p>
+        </div>
+        <div class="concern-card">
+          <span class="concern-icon">
+            <svg viewBox="0 0 36 36" aria-hidden="true"><rect x="14" y="7" width="8" height="17" rx="4"/><path d="M14 24 L18 33 L22 24"/><line x1="18" y1="24" x2="18" y2="32"/><rect x="13" y="4" width="10" height="8" rx="3" fill="var(--accent)" stroke="var(--accent)" stroke-width="1"/><line x1="14" y1="12" x2="22" y2="12"/></svg>
+          </span>
+          <p>遺言書を作っておきたいが、何から始めればいいかわからない</p>
+        </div>
+        <div class="concern-card">
+          <span class="concern-icon">
+            <svg viewBox="0 0 36 36" aria-hidden="true"><rect x="8" y="4" width="20" height="28" rx="2"/><line x1="12" y1="12" x2="24" y2="12"/><line x1="12" y1="17" x2="24" y2="17"/><line x1="12" y1="22" x2="20" y2="22"/><polyline points="6,8 4,8 4,34 28,34 28,30"/></svg>
+          </span>
+          <p>遺産分割協議書を作らないといけないが、書き方がわからない</p>
+        </div>
+        <div class="concern-card">
+          <span class="concern-icon">
+            <svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="8" r="6" style="fill:var(--accent);stroke:none;"/><path d="M4 34 L4 22 Q4 17 10 16 L15 15 L18 21 L21 15 L26 16 Q32 17 32 22 L32 34 Z" style="fill:var(--accent);stroke:none;"/><path d="M15 15 L18 21 L21 15" style="fill:none;stroke:white;stroke-width:2;stroke-linejoin:round;"/><path d="M17 20 L15 28 L18 32 L21 28 L19 20 Z" style="fill:white;stroke:none;"/></svg>
+          </span>
+          <p>任意後見契約の手続きをサポートしてほしい</p>
+        </div>
+        <div class="concern-card">
+          <span class="concern-icon">
+            <svg viewBox="0 0 36 36" aria-hidden="true"><line x1="2" y1="31" x2="34" y2="31"/><polyline points="4,31 14,9 22,19 28,11 34,31"/><path d="M14 9 L10 19 L18 19 Z" fill="var(--accent)" stroke="none" opacity="0.35"/></svg>
+          </span>
+          <p>相続した土地が農地で、普通の不動産と手続きが違うと聞いた</p>
+        </div>
+        <div class="concern-card">
+          <span class="concern-icon">
+            <svg viewBox="0 0 36 36" aria-hidden="true"><polygon points="18,5 32,18 28,18 28,31 8,31 8,18 4,18"/><line x1="14" y1="31" x2="14" y2="23"/><line x1="22" y1="31" x2="22" y2="23"/><line x1="14" y1="23" x2="22" y2="23"/><line x1="11" y1="14" x2="15" y2="18"/><line x1="21" y1="14" x2="25" y2="18"/></svg>
+          </span>
+          <p>実家が空き家になっているが、売るべきか残すべきか迷っている</p>
+        </div>
+        <div class="concern-card">
+          <span class="concern-icon">
+            <svg viewBox="0 0 36 36" aria-hidden="true"><path d="M3 23 L3 19 L9 13 L23 13 L29 19 L33 19 L33 25 L3 25 Z"/><path d="M10 19 L10 14 L22 14 L27 19"/><circle cx="10" cy="25" r="4"/><circle cx="26" cy="25" r="4"/><circle cx="10" cy="25" r="2"/><circle cx="26" cy="25" r="2"/></svg>
+          </span>
+          <p>親の家を引き継いだが、遠くに住んでいて管理できない</p>
+        </div>
+        <div class="concern-card">
+          <span class="concern-icon">
+            <svg viewBox="0 0 36 36" aria-hidden="true"><line x1="18" y1="32" x2="18" y2="18"/><path d="M18 24 C14 22 9 20 8 23 C9 28 16 27 18 24Z"/><path d="M18 20 C22 17 27 14 29 17 C28 23 20 23 18 20Z"/><path d="M11 32 Q18 28 25 32" stroke-linecap="round"/></svg>
+          </span>
+          <p>使っていない農地や山林をどうにかしたい</p>
+        </div>
+        <div class="concern-card">
+          <span class="concern-icon">
+            <svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="9" cy="9" r="4"/><path d="M3 22 Q3 16 9 16 Q11 16 13 18"/><circle cx="27" cy="9" r="4"/><path d="M33 22 Q33 16 27 16 Q25 16 23 18"/><rect x="14" y="14" width="8" height="10" rx="1"/><line x1="13" y1="18" x2="14" y2="18"/><line x1="23" y1="18" x2="22" y2="18"/></svg>
+          </span>
+          <p>親が亡くなり、土地や家の名義変更をどうすればいいかわからない</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3：サービス内容 -->
+  <section class="services" id="services">
+    <div class="section-inner">
+      <h2>サービス内容</h2>
+      <div class="services-grid">
+        <!-- 行政書士業務 -->
+        <div class="service-box">
+          <div class="service-box-header">① 行政書士業務</div>
+          <div class="service-box-body">
+            <div class="service-category">
+              <h4>【相続・遺言】</h4>
+              <ul>
+                <li>遺言書の作成支援</li>
+                <li>遺産分割協議書の作成</li>
+                <li>相続人・相続財産の調査</li>
+                <li>相続関係説明図の作成</li>
+              </ul>
+            </div>
+            <div class="service-category">
+              <h4>【農地・許認可】</h4>
+              <ul>
+                <li>農地法に基づく売買・転用の申請</li>
+                <li>農業委員会への各種届出</li>
+                <li>農地転用許可申請（農地→宅地・駐車場など）</li>
+              </ul>
+            </div>
+            <div class="service-category">
+              <h4>【財産管理・後見】</h4>
+              <ul>
+                <li>任意後見契約書の作成</li>
+                <li>財産管理等委任契約の作成</li>
+                <li>家族信託に関する相談</li>
+              </ul>
+            </div>
+            <div class="service-category">
+              <h4>【事業承継】</h4>
+              <ul>
+                <li>農業・家業の後継者への引き継ぎ支援</li>
+                <li>事業承継に関する書類作成</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 不動産業務 -->
+        <div class="service-box">
+          <div class="service-box-header">② 不動産業務</div>
+          <div class="service-box-body">
+            <div class="service-category">
+              <h4>【売買・活用】</h4>
+              <ul>
+                <li>農地・山林・空き家の売買仲介</li>
+                <li>不稼働資産（使っていない土地・建物）の活用提案</li>
+              </ul>
+            </div>
+            <div class="service-category">
+              <h4>【移住・田舎暮らし】</h4>
+              <ul>
+                <li>鳥羽市内への移住希望者への物件紹介</li>
+              </ul>
+            </div>
+            <div class="service-category">
+              <h4>【管理・整理】</h4>
+              <ul>
+                <li>遠方在住者の実家・空き家の管理代行</li>
+                <li>実家資産の整理・処分サポート</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4：代表のご挨拶 -->
+  <section class="greeting" id="greeting">
+    <div class="section-inner">
+      <h2>代表のご挨拶</h2>
+      <div class="greeting-inner">
+        <div class="greeting-photo">
+          <img src="okumura_profile.png" alt="代表 奥村晃">
+        </div>
+        <div class="greeting-text">
+          <p>私は、鳥羽市の農村で生まれ育ちました。</p>
+          <p>40年以上にわたって伊勢・鳥羽・志摩地域の農業協同組合で勤め、営農指導、農産販売、金融、不動産、施設整備と、さまざまな業務を通じて、この地域の方々の暮らしに関わり続けてきました。</p>
+          <p>お世話になった地元に少しでも恩返しがしたい。その思いで、63歳で行政書士事務所と不動産業を立ち上げました。</p>
+          <p>今、鳥羽をはじめとする農山村では、人口減少と高齢化が急速に進んでいます。荒れた農地、空き家になった実家、相続の問題。</p>
+          <p>一方で、著名作家の「都会が花ならば、農村漁村は根である」という言葉にあるように、地元ならではの価値は存在し続けていると感じています。</p>
+          <p>相続のこと、遺言のこと、農地のこと、空き家のこと。鳥羽で生まれ、この地域で働き続けてきた経験を活かして、一つひとつ丁寧にお手伝いしています。</p>
+          <p>「誰に相談すればいいかわからない」という方も、まずはお気軽にご連絡ください。</p>
+          <p class="sign">鳥羽ふるさと不動産・行政書士奥村晃事務所　代表　奥村 晃</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 写真ギャラリー（代表挨拶とよくあるご質問の間） -->
+  <div class="photo-gallery">
+    <div class="photo-gallery-inner">
+      <img src="photo_farm.png" alt="農地での作業風景">
+      <img src="photo_consult.png" alt="相談風景">
+    </div>
+  </div>
+
+  <!-- Section 5：よくあるご質問リンク -->
+  <section class="qa-link" id="qa">
+    <div class="section-inner">
+      <h2>よくあるご質問</h2>
+      <p class="qa-link-lead">相続・農地・空き家など、よくいただくご質問をまとめました。</p>
+      <a href="qa.html" class="btn-primary">よくあるご質問を見る</a>
+    </div>
+  </section>
+
+  <!-- Section 6：会社概要 -->
+  <section class="company" id="company">
+    <div class="section-inner">
+      <h2>会社概要</h2>
+      <div class="company-tables">
+        <div>
+          <p class="company-table-title">行政書士奥村晃事務所</p>
+          <table class="info-table">
+            <tbody>
+              <tr><th>事務所名</th><td>行政書士奥村晃事務所</td></tr>
+              <tr><th>所在地</th><td>〒517-0004　三重県鳥羽市岩倉町349-1</td></tr>
+              <tr><th>電話番号</th><td><a href="tel:0599250055">0599-25-0055</a></td></tr>
+              <tr><th>FAX</th><td>0599-25-0056</td></tr>
+              <tr><th>メール</th><td><a href="mailto:tobafu.jp@gmail.com">tobafu.jp@gmail.com</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <p class="company-table-title">鳥羽ふるさと不動産</p>
+          <table class="info-table">
+            <tbody>
+              <tr><th>商号</th><td>鳥羽ふるさと不動産</td></tr>
+              <tr><th>免許番号</th><td>宅地建物取引業免許（三重県知事（1）第3778号）</td></tr>
+              <tr><th>所在地</th><td>〒517-0004　三重県鳥羽市岩倉町349-1</td></tr>
+              <tr><th>電話番号</th><td><a href="tel:0599250055">0599-25-0055</a></td></tr>
+              <tr><th>FAX</th><td>0599-25-0056</td></tr>
+              <tr><th>メール</th><td><a href="mailto:tobafu.jp@gmail.com">tobafu.jp@gmail.com</a></td></tr>
+              <tr><th>所属団体</th><td>(公社) 三重県宅地建物取引業協会会員　東海不動産公正取引協議会加盟</td></tr>
+              <tr><th>保証協会</th><td>(公社) 全国宅地建物取引業保証協会</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Google マップ埋め込み -->
+      <div class="map-wrapper">
+        <iframe
+          src="https://maps.google.com/maps?q=%E4%B8%89%E9%87%8D%E7%9C%8C%E9%B3%A5%E7%BE%BD%E5%B8%82%E5%B2%A9%E5%80%89%E7%94%BA349-1&output=embed&hl=ja"
+          width="600"
+          height="380"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="三重県鳥羽市岩倉町349-1 地図">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 7：お問い合わせ -->
+  <section class="contact" id="contact">
+    <div class="section-inner">
+      <h2>お問い合わせ</h2>
+      <p class="contact-lead">電話・メールにてお受けしています。まずはお気軽にご相談ください。</p>
+
+      <div class="contact-tel">
+        <a href="tel:0599250055">0599-25-0055</a>
+        <span class="tel-note">受付時間：月曜〜木曜　10時〜17時</span>
+      </div>
+
+      <div class="contact-email">
+        メール：<a href="mailto:tobafu.jp@gmail.com">tobafu.jp@gmail.com</a>
+      </div>
+
+      <!-- 個人情報保護方針（アコーディオン） -->
+      <div class="accordion-wrap">
+        <button class="accordion-btn" id="privacyBtn" aria-expanded="false" aria-controls="privacyBody">
+          個人情報保護方針
+          <i class="accordion-icon">▼</i>
+        </button>
+        <div class="accordion-body" id="privacyBody" role="region" aria-labelledby="privacyBtn">
+          <h3>個人情報保護方針</h3>
+          <p>当社は、業務上取り扱う個人情報について、個人情報の保護に関する法律その他の関係法令を遵守し、次の方針のもとで適切に取り扱います。</p>
+          <p class="policy-section">（適正取得の原則）</p>
+          <p class="policy-item">1. 当社は、個人情報を偽りその他不正の手段により取得しません。</p>
+          <p class="policy-section">（目的明確化の原則）</p>
+          <p class="policy-item">2. 当社は、個人情報を取り扱うにあたり、その利用目的を出来るかぎり特定します。</p>
+          <p class="policy-section">（利用制限の原則）</p>
+          <p class="policy-item">3. 当社は、法令により認められる場合のほか、個人情報を利用目的の達成に必要な範囲でのみ取り扱います。</p>
+          <p class="policy-item">4. 当社は、法令により認められる場合および本人の同意を得た場合のほか、個人情報を第三者に提供しません。</p>
+          <p class="policy-section">（データ内容の原則）</p>
+          <p class="policy-item">5. 当社は、保有する個人情報を正確かつ最新の内容に保つよう努めます。</p>
+          <p class="policy-section">（安全保護の原則）</p>
+          <p class="policy-item">6. 当社は、個人情報の漏洩等の防止その他安全管理のために必要な措置を講じます。</p>
+          <p class="policy-item">7. 当社は、従業者・委託先に対し必要かつ適切な監督を行います。</p>
+          <p class="policy-section">（公開の原則）</p>
+          <p class="policy-item">8. 当社は、個人情報について、利用目的等を通知または公表します。</p>
+          <p class="policy-section">（個人参加の原則）</p>
+          <p class="policy-item">9. 当社は、個人情報についての開示・訂正・利用停止等の請求に対し、遅滞なく適正に対処します。</p>
+          <p class="policy-section">（責任の原則）</p>
+          <p class="policy-item">10. 当社は、個人情報の取扱いに関する苦情に対し、適切かつ迅速に対処します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- フッター -->
+<footer>
+  <p>© 行政書士奥村晃事務所 ／ 鳥羽ふるさと不動産</p>
+  <p>〒517-0004　三重県鳥羽市岩倉町349-1　TEL: <a href="tel:0599250055" style="color:inherit;">0599-25-0055</a></p>
+</footer>
+
+<script>
+  // ハンバーガーメニュー
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileNav.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
+  });
+
+  // モバイルナビのリンクをクリックしたら閉じる
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileNav.classList.remove('open');
+      hamburger.classList.remove('open');
+    });
+  });
+
+  // 個人情報保護方針アコーディオン
+  const privacyBtn = document.getElementById('privacyBtn');
+  const privacyBody = document.getElementById('privacyBody');
+
+  privacyBtn.addEventListener('click', () => {
+    const isOpen = privacyBody.classList.toggle('open');
+    privacyBtn.classList.toggle('open', isOpen);
+    privacyBtn.setAttribute('aria-expanded', isOpen);
+  });
+</script>
+
+</body>
+</html>

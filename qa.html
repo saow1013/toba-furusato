@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>よくあるご質問 ｜ 鳥羽ふるさと不動産 ／ 行政書士奥村晃事務所</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --main: #7B5C3E;
+      --accent: #C4976A;
+      --dark: #5E4430;
+      --bg: #FAF7F2;
+      --text: #2C2C2C;
+      --border: #E0D5C5;
+      --card-bg: #FFFFFF;
+      --max-w: 900px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 17px;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.8;
+    }
+
+    /* ヘッダー */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: var(--dark);
+      color: #fff;
+      padding: 0 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .header-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+      gap: 16px;
+    }
+
+    .header-logo {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
+    }
+
+    .header-logo a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .header-logo span {
+      font-size: 13px;
+      font-family: 'Noto Serif JP', serif;
+      white-space: nowrap;
+      line-height: 1.4;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-shrink: 0;
+    }
+
+    .header-tel a {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+
+    .header-tel a:hover { background: var(--main); }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+    }
+
+    .hamburger span {
+      display: block;
+      height: 2px;
+      background: #fff;
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    nav {
+      display: flex;
+      align-items: center;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 4px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 13px;
+      padding: 6px 10px;
+      border-radius: 4px;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+
+    nav ul li a:hover { background: rgba(255,255,255,0.15); }
+    nav ul li a.current { background: rgba(255,255,255,0.2); font-weight: 700; }
+
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 70px;
+      left: 0;
+      right: 0;
+      z-index: 99;
+      background: var(--dark);
+      padding: 12px 0;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .mobile-nav.open { display: block; }
+
+    .mobile-nav ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mobile-nav ul li a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      transition: background 0.2s;
+    }
+
+    .mobile-nav ul li a:hover { background: rgba(255,255,255,0.1); }
+
+    /* メインコンテンツ */
+    main {
+      padding-top: 70px;
+      padding-bottom: 60px;
+    }
+
+    /* ページタイトル */
+    .page-hero {
+      background: var(--main);
+      color: #fff;
+      padding: 48px 20px;
+      text-align: center;
+    }
+
+    .page-hero h1 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(22px, 4vw, 32px);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
+
+    /* コンテンツエリア */
+    .qa-content {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 48px 20px;
+    }
+
+    /* ホームに戻るボタン */
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg);
+      color: var(--main);
+      border: 2px solid var(--main);
+      padding: 10px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 16px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .btn-back:hover {
+      background: var(--main);
+      color: #fff;
+    }
+
+    .btn-back-wrap {
+      margin-bottom: 40px;
+    }
+
+    .btn-back-wrap.bottom {
+      margin-top: 48px;
+      margin-bottom: 0;
+    }
+
+    /* カテゴリセクション */
+    .qa-category {
+      margin-bottom: 48px;
+    }
+
+    .qa-category h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--main);
+      padding: 12px 20px;
+      background: var(--bg);
+      border-left: 5px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 16px;
+    }
+
+    /* Q&Aアコーディオン */
+    .qa-item {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-bottom: 10px;
+      overflow: hidden;
+      background: var(--card-bg);
+    }
+
+    .qa-question {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      width: 100%;
+      padding: 18px 20px;
+      background: none;
+      border: none;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text);
+      cursor: pointer;
+      text-align: left;
+      transition: background 0.2s;
+      line-height: 1.6;
+    }
+
+    .qa-question:hover { background: #faf5ee; }
+
+    .qa-q-label {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      background: var(--main);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 15px;
+      margin-top: 1px;
+    }
+
+    .qa-q-text { flex: 1; }
+
+    .qa-chevron {
+      flex-shrink: 0;
+      font-style: normal;
+      color: var(--accent);
+      font-size: 14px;
+      transition: transform 0.3s;
+      margin-top: 4px;
+    }
+
+    .qa-question.open .qa-chevron { transform: rotate(180deg); }
+    .qa-question.open { background: #faf5ee; }
+
+    .qa-answer {
+      display: none;
+      padding: 0 20px 20px 66px;
+      font-size: 16px;
+      line-height: 1.9;
+      color: var(--text);
+      border-top: 1px solid var(--border);
+    }
+
+    .qa-answer.open {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding-top: 16px;
+    }
+
+    .qa-a-label {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .qa-a-text { flex: 1; padding-top: 4px; }
+
+    /* フッター */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.85);
+      text-align: center;
+      padding: 28px 20px;
+      font-size: 14px;
+    }
+
+    footer p { line-height: 1.8; }
+
+    /* レスポンシブ */
+    @media (max-width: 768px) {
+      nav { display: none; }
+      .hamburger { display: flex; }
+
+      .header-inner { height: 60px; }
+      main { padding-top: 60px; }
+      .mobile-nav { top: 60px; }
+
+      .header-logo span { font-size: 11px; }
+      .header-tel a { font-size: 13px; padding: 6px 10px; }
+
+      .page-hero { padding: 36px 16px; }
+
+      .qa-content { padding: 32px 16px; }
+
+      .qa-answer.open { padding-left: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header>
+  <div class="header-inner">
+    <div class="header-logo">
+      <a href="index.html">
+        <span>行政書士奥村晃事務所</span><br>
+        <span>鳥羽ふるさと不動産</span>
+      </a>
+    </div>
+    <nav aria-label="グローバルナビゲーション">
+      <ul>
+        <li><a href="index.html#home">ホーム</a></li>
+        <li><a href="index.html#services">サービス内容</a></li>
+        <li><a href="index.html#greeting">代表挨拶</a></li>
+        <li><a href="index.html#company">会社概要</a></li>
+        <li><a href="index.html#contact">お問い合わせ</a></li>
+        <li><a href="qa.html" class="current">よくあるご質問</a></li>
+      </ul>
+    </nav>
+    <div class="header-right">
+      <div class="header-tel">
+        <a href="tel:0599250055">📞 0599-25-0055</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- スマホ用ナビ -->
+<nav class="mobile-nav" id="mobileNav" aria-label="モバイルナビゲーション">
+  <ul>
+    <li><a href="index.html#home" class="mobile-link">ホーム</a></li>
+    <li><a href="index.html#services" class="mobile-link">サービス内容</a></li>
+    <li><a href="index.html#greeting" class="mobile-link">代表挨拶</a></li>
+    <li><a href="index.html#company" class="mobile-link">会社概要</a></li>
+    <li><a href="index.html#contact" class="mobile-link">お問い合わせ</a></li>
+    <li><a href="qa.html" class="mobile-link">よくあるご質問</a></li>
+  </ul>
+</nav>
+
+<main>
+  <!-- ページタイトル -->
+  <div class="page-hero">
+    <h1>よくあるご質問</h1>
+  </div>
+
+  <div class="qa-content">
+
+    <!-- ホームに戻るボタン（上部） -->
+    <div class="btn-back-wrap">
+      <a href="index.html" class="btn-back">← ホームに戻る</a>
+    </div>
+
+    <!-- カテゴリ：相談について -->
+    <div class="qa-category">
+      <h2>相談について</h2>
+
+      <div class="qa-item">
+        <button class="qa-question" aria-expanded="false">
+          <span class="qa-q-label">Q</span>
+          <span class="qa-q-text">相談だけでも対応してもらえますか？</span>
+          <i class="qa-chevron">▼</i>
+        </button>
+        <div class="qa-answer" role="region">
+          <span class="qa-a-label">A</span>
+          <p class="qa-a-text">はい、まずはお気軽にご連絡ください。相談内容をお聞きした上で、必要な手続きや費用についてご説明します。</p>
+        </div>
+      </div>
+
+      <div class="qa-item">
+        <button class="qa-question" aria-expanded="false">
+          <span class="qa-q-label">Q</span>
+          <span class="qa-q-text">ホームページに掲載されている業務しか相談できませんか？</span>
+          <i class="qa-chevron">▼</i>
+        </button>
+        <div class="qa-answer" role="region">
+          <span class="qa-a-label">A</span>
+          <p class="qa-a-text">掲載されていない業務でも、まずはご相談ください。必要に応じて、他の専門家をご案内することも可能です。</p>
+        </div>
+      </div>
+
+      <div class="qa-item">
+        <button class="qa-question" aria-expanded="false">
+          <span class="qa-q-label">Q</span>
+          <span class="qa-q-text">費用はどのくらいかかりますか？</span>
+          <i class="qa-chevron">▼</i>
+        </button>
+        <div class="qa-answer" role="region">
+          <span class="qa-a-label">A</span>
+          <p class="qa-a-text">手続きの内容によって異なります。まずはご相談いただいた上で、費用についてご説明します。</p>
+        </div>
+      </div>
+
+      <div class="qa-item">
+        <button class="qa-question" aria-expanded="false">
+          <span class="qa-q-label">Q</span>
+          <span class="qa-q-text">予約はどのようにしたらよいですか？</span>
+          <i class="qa-chevron">▼</i>
+        </button>
+        <div class="qa-answer" role="region">
+          <span class="qa-a-label">A</span>
+          <p class="qa-a-text">お電話またはメールにてご連絡いただきましたら、ご予約の日程調整をさせていただきます。</p>
+        </div>
+      </div>
+
+      <div class="qa-item">
+        <button class="qa-question" aria-expanded="false">
+          <span class="qa-q-label">Q</span>
+          <span class="qa-q-text">相談をしたら、必ず業務を依頼しなければならないのですか？</span>
+          <i class="qa-chevron">▼</i>
+        </button>
+        <div class="qa-answer" role="region">
+          <span class="qa-a-label">A</span>
+          <p class="qa-a-text">そんなことはございません。相談してみないと分からないことがありますので、お気になさらずお気軽にご相談ください。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- カテゴリ：相続・遺言 -->
+    <div class="qa-category">
+      <h2>相続・遺言</h2>
+
+      <div class="qa-item">
+        <button class="qa-question" aria-expanded="false">
+          <span class="qa-q-label">Q</span>
+          <span class="qa-q-text">生前対策にはどのようなものがありますか？</span>
+          <i class="qa-chevron">▼</i>
+        </button>
+        <div class="qa-answer" role="region">
+          <span class="qa-a-label">A</span>
+          <p class="qa-a-text">主に「生前贈与」「遺言」「資産の入れ替え」「任意後見制度」「家族信託」があります。どの方法が良いかはご依頼主様の状況によりますので、事情を十分にお伺いした上でご案内します。</p>
+        </div>
+      </div>
+
+      <div class="qa-item">
+        <button class="qa-question" aria-expanded="false">
+          <span class="qa-q-label">Q</span>
+          <span class="qa-q-text">親が亡くなりました。何から始めればいいですか？</span>
+          <i class="qa-chevron">▼</i>
+        </button>
+        <div class="qa-answer" role="region">
+          <span class="qa-a-label">A</span>
+          <p class="qa-a-text">まずは相続人の確認と、財産の把握から始めます。何をどの順番で進めればいいか、一緒に整理しますのでご相談ください。</p>
+        </div>
+      </div>
+
+      <div class="qa-item">
+        <button class="qa-question" aria-expanded="false">
+          <span class="qa-q-label">Q</span>
+          <span class="qa-q-text">相続した土地が遠方にあります。対応できますか？</span>
+          <i class="qa-chevron">▼</i>
+        </button>
+        <div class="qa-answer" role="region">
+          <span class="qa-a-label">A</span>
+          <p class="qa-a-text">はい、対応しています。まずはご相談ください。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- カテゴリ：農地・土地 -->
+    <div class="qa-category">
+      <h2>農地・土地</h2>
+
+      <div class="qa-item">
+        <button class="qa-question" aria-expanded="false">
+          <span class="qa-q-label">Q</span>
+          <span class="qa-q-text">農地を売りたいのですが、普通の土地と違いますか？</span>
+          <i class="qa-chevron">▼</i>
+        </button>
+        <div class="qa-answer" role="region">
+          <span class="qa-a-label">A</span>
+          <p class="qa-a-text">農地の売買には農業委員会への申請が必要で、通常の不動産とは手続きが異なります。必要な申請を代行しますのでご相談ください。</p>
+        </div>
+      </div>
+
+      <div class="qa-item">
+        <button class="qa-question" aria-expanded="false">
+          <span class="qa-q-label">Q</span>
+          <span class="qa-q-text">山林を相続しましたが、どうすればいいですか？</span>
+          <i class="qa-chevron">▼</i>
+        </button>
+        <div class="qa-answer" role="region">
+          <span class="qa-a-label">A</span>
+          <p class="qa-a-text">売却・活用・管理など、状況に合わせた選択肢をご提案します。まずはご相談ください。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- カテゴリ：空き家・不動産 -->
+    <div class="qa-category">
+      <h2>空き家・不動産</h2>
+
+      <div class="qa-item">
+        <button class="qa-question" aria-expanded="false">
+          <span class="qa-q-label">Q</span>
+          <span class="qa-q-text">実家が空き家になっています。どうしたらいいですか？</span>
+          <i class="qa-chevron">▼</i>
+        </button>
+        <div class="qa-answer" role="region">
+          <span class="qa-a-label">A</span>
+          <p class="qa-a-text">農地・古家・山林などの物件について査定・売却のご相談も承っています。</p>
+        </div>
+      </div>
+
+      <div class="qa-item">
+        <button class="qa-question" aria-expanded="false">
+          <span class="qa-q-label">Q</span>
+          <span class="qa-q-text">遠方に住んでいて、実家の管理ができません。</span>
+          <i class="qa-chevron">▼</i>
+        </button>
+        <div class="qa-answer" role="region">
+          <span class="qa-a-label">A</span>
+          <p class="qa-a-text">空き家の管理や整理についてもご相談を受け付けています。まずはお気軽にご連絡ください。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- カテゴリ：財産管理・老後 -->
+    <div class="qa-category">
+      <h2>財産管理・老後</h2>
+
+      <div class="qa-item">
+        <button class="qa-question" aria-expanded="false">
+          <span class="qa-q-label">Q</span>
+          <span class="qa-q-text">親が高齢で、財産の管理が心配です。</span>
+          <i class="qa-chevron">▼</i>
+        </button>
+        <div class="qa-answer" role="region">
+          <span class="qa-a-label">A</span>
+          <p class="qa-a-text">任意後見制度の利用や、財産管理に関する書類作成のサポートが可能です。余分な費用や時間を要したりすることがないよう、早めにご相談いただくことをおすすめします。</p>
+        </div>
+      </div>
+
+      <div class="qa-item">
+        <button class="qa-question" aria-expanded="false">
+          <span class="qa-q-label">Q</span>
+          <span class="qa-q-text">自分が元気なうちに、財産の整理をしておきたい。</span>
+          <i class="qa-chevron">▼</i>
+        </button>
+        <div class="qa-answer" role="region">
+          <span class="qa-a-label">A</span>
+          <p class="qa-a-text">遺言書の作成や財産の整理など、ご希望に合わせてサポートします。「何から始めればいいかわからない」という段階からでもお気軽にご相談ください。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ホームに戻るボタン（下部） -->
+    <div class="btn-back-wrap bottom">
+      <a href="index.html" class="btn-back">← ホームに戻る</a>
+    </div>
+
+  </div>
+</main>
+
+<!-- フッター -->
+<footer>
+  <p>© 行政書士奥村晃事務所 ／ 鳥羽ふるさと不動産</p>
+  <p>〒517-0004　三重県鳥羽市岩倉町349-1　TEL: <a href="tel:0599250055" style="color:inherit;">0599-25-0055</a></p>
+</footer>
+
+<script>
+  // ハンバーガーメニュー
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileNav.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
+  });
+
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileNav.classList.remove('open');
+      hamburger.classList.remove('open');
+    });
+  });
+
+  // Q&Aアコーディオン
+  document.querySelectorAll('.qa-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const answer = btn.nextElementSibling;
+      const isOpen = answer.classList.toggle('open');
+      btn.classList.toggle('open', isOpen);
+      btn.setAttribute('aria-expanded', isOpen);
+    });
+  });
+</script>
+
+</body>
+</html>
