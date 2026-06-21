@@ -358,10 +358,7 @@
     .greeting { background: var(--bg); }
 
     .greeting-inner {
-      display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 40px;
-      align-items: start;
+      display: block;
     }
 
     .greeting-photo img {
@@ -433,6 +430,14 @@
       border-radius: 8px;
       border: 1px solid var(--border);
       display: block;
+    }
+
+    /* 事務所案内画像が1枚のとき（中央・1列） */
+    .info-photos-single {
+      grid-template-columns: 1fr;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     /* Section 5：よくあるご質問リンク */
@@ -853,9 +858,6 @@
     <div class="section-inner">
       <h2>代表挨拶</h2>
       <div class="greeting-inner">
-        <div class="greeting-photo">
-          <img src="okumura_profile01.jpg" alt="代表 奥村晃">
-        </div>
         <div class="greeting-text">
           <p>私は、鳥羽市の農村で生まれ育ちました。</p>
           <p>40年以上にわたって伊勢・鳥羽・志摩地域の農業協同組合で勤め、営農指導、農産販売、金融、不動産、施設整備と、さまざまな業務を通じて、この地域の方々の暮らしに関わり続けてきました。</p>
@@ -872,7 +874,8 @@
 
   <!-- 写真（代表挨拶とよくあるご質問の間） -->
   <div class="photo-gallery">
-    <div class="photo-gallery-single">
+    <div class="photo-gallery-inner">
+      <img src="okumura_profile01.jpg" alt="相談の様子">
       <img src="okumura_profile02.jpg" alt="代表 奥村晃">
     </div>
   </div>
@@ -935,9 +938,8 @@
       </div>
 
       <!-- 事務所案内画像 -->
-      <div class="info-photos">
+      <div class="info-photos info-photos-single">
         <img src="okumura_info01.jpg" alt="事務所案内">
-        <img src="okumura_info02.jpg" alt="事務所案内">
       </div>
     </div>
   </section>
