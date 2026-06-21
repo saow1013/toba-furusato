@@ -405,6 +405,36 @@
       display: block;
     }
 
+    /* 単独写真（中央寄せ） */
+    .photo-gallery-single {
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .photo-gallery-single img {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      display: block;
+    }
+
+    /* 事務所案内画像（会社概要・マップ下） */
+    .info-photos {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .info-photos img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      display: block;
+    }
+
     /* Section 5：よくあるご質問リンク */
     .qa-link { background: var(--main); }
 
@@ -614,6 +644,7 @@
       .greeting-inner { grid-template-columns: 1fr; }
       .greeting-photo { max-width: 240px; margin: 0 auto; }
       .photo-gallery-inner { grid-template-columns: 1fr; }
+      .info-photos { grid-template-columns: 1fr; }
 
       .contact-tel a { font-size: 28px; }
 
@@ -820,10 +851,10 @@
   <!-- Section 4：代表のご挨拶 -->
   <section class="greeting" id="greeting">
     <div class="section-inner">
-      <h2>代表のご挨拶</h2>
+      <h2>代表挨拶</h2>
       <div class="greeting-inner">
         <div class="greeting-photo">
-          <img src="okumura_profile.png" alt="代表 奥村晃">
+          <img src="okumura_profile01.jpg" alt="代表 奥村晃">
         </div>
         <div class="greeting-text">
           <p>私は、鳥羽市の農村で生まれ育ちました。</p>
@@ -833,17 +864,16 @@
           <p>一方で、著名作家の「都会が花ならば、農村漁村は根である」という言葉にあるように、地元ならではの価値は存在し続けていると感じています。</p>
           <p>相続のこと、遺言のこと、農地のこと、空き家のこと。鳥羽で生まれ、この地域で働き続けてきた経験を活かして、一つひとつ丁寧にお手伝いしています。</p>
           <p>「誰に相談すればいいかわからない」という方も、まずはお気軽にご連絡ください。</p>
-          <p class="sign">鳥羽ふるさと不動産・行政書士奥村晃事務所　代表　奥村 晃</p>
+          <p class="sign">鳥羽ふるさと不動産・行政書士奥村晃事務所<br>代表　奥村 晃</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 写真ギャラリー（代表挨拶とよくあるご質問の間） -->
+  <!-- 写真（代表挨拶とよくあるご質問の間） -->
   <div class="photo-gallery">
-    <div class="photo-gallery-inner">
-      <img src="photo_farm.png" alt="農地での作業風景">
-      <img src="photo_consult.png" alt="相談風景">
+    <div class="photo-gallery-single">
+      <img src="okumura_profile02.jpg" alt="代表 奥村晃">
     </div>
   </div>
 
@@ -903,6 +933,12 @@
           title="三重県鳥羽市岩倉町349-1 地図">
         </iframe>
       </div>
+
+      <!-- 事務所案内画像 -->
+      <div class="info-photos">
+        <img src="okumura_info01.jpg" alt="事務所案内">
+        <img src="okumura_info02.jpg" alt="事務所案内">
+      </div>
     </div>
   </section>
 
@@ -918,7 +954,7 @@
       </div>
 
       <div class="contact-email">
-        メール：<a href="mailto:tobafu.jp@gmail.com">tobafu.jp@gmail.com</a>
+        メール：<a href="mailto:okuoffice.jp@gmail.com">okuoffice.jp@gmail.com</a>
       </div>
 
       <!-- 個人情報保護方針（アコーディオン） -->
