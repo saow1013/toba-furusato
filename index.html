@@ -301,6 +301,20 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 32px;
+      align-items: start;
+    }
+
+    .services-right {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .service-photo {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      display: block;
     }
 
     .service-box {
@@ -438,6 +452,32 @@
       max-width: 560px;
       margin-left: auto;
       margin-right: auto;
+    }
+
+    /* アクセス（会社概要・マップ下） */
+    .access-block {
+      margin-top: 32px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .access-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--main);
+      margin-bottom: 12px;
+    }
+
+    .access-text p { line-height: 1.9; }
+
+    .access-photo img {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      display: block;
     }
 
     /* Section 5：よくあるご質問リンク */
@@ -650,6 +690,7 @@
       .greeting-photo { max-width: 240px; margin: 0 auto; }
       .photo-gallery-inner { grid-template-columns: 1fr; }
       .info-photos { grid-template-columns: 1fr; }
+      .access-block { grid-template-columns: 1fr; gap: 20px; }
 
       .contact-tel a { font-size: 28px; }
 
@@ -823,7 +864,8 @@
           </div>
         </div>
 
-        <!-- 不動産業務 -->
+        <!-- 不動産業務 ＋ 写真 -->
+        <div class="services-right">
         <div class="service-box">
           <div class="service-box-header">不動産業務</div>
           <div class="service-box-body">
@@ -848,6 +890,8 @@
               </ul>
             </div>
           </div>
+        </div>
+        <img src="okumura_profile02.jpg" alt="代表 奥村晃" class="service-photo">
         </div>
       </div>
     </div>
@@ -876,7 +920,6 @@
   <div class="photo-gallery">
     <div class="photo-gallery-inner">
       <img src="okumura_profile01.jpg" alt="相談の様子">
-      <img src="okumura_profile02.jpg" alt="代表 奥村晃">
     </div>
   </div>
 
@@ -937,9 +980,15 @@
         </iframe>
       </div>
 
-      <!-- 事務所案内画像 -->
-      <div class="info-photos info-photos-single">
-        <img src="okumura_info01.jpg" alt="事務所案内">
+      <!-- アクセス -->
+      <div class="access-block">
+        <div class="access-text">
+          <p class="access-title">アクセス</p>
+          <p>近鉄志摩線「加茂駅」より徒歩7分<br>駐車場あり<br>（不在の場合は、お電話ください）</p>
+        </div>
+        <div class="access-photo">
+          <img src="okumura_info01.jpg" alt="事務所外観">
+        </div>
       </div>
     </div>
   </section>
